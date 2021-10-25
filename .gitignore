@@ -1,0 +1,4 @@
+static/*
+logs/*
+!*.gitkeep
+!static/teste.txt

@@ -1,0 +1,13 @@
+version: '2'
+services:
+  app:
+    image: openresty/openresty:buster-fat
+    container_name: nginx
+    restart: always
+    ports:
+      - "8888:8888"
+    volumes:
+      - "./conf/custom.conf:/etc/nginx/conf.d/custom.conf"
+      - "./static/:/usr/local/openresty/nginx/html/"
+      - "./logs:/usr/local/openresty/nginx/logs"   
+    
