@@ -4,10 +4,12 @@ services:
     image: openresty/openresty:buster-fat
     container_name: nginx
     restart: always
+    network_mode: host
     ports:
       - "8888:8888"
     volumes:
-      - "./conf/custom.conf:/etc/nginx/conf.d/custom.conf"
+      - "./certs/:/etc/nginx/certs/"
+      - "./conf/:/etc/nginx/conf.d/"
       - "./static/:/usr/local/openresty/nginx/html/"
       - "./logs:/usr/local/openresty/nginx/logs"   
     
